@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalRoute Logistics Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --text-color: #333;
+            --light-bg: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Previous styles remain the same, adding new styles below */
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+            padding: 100px 7%;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        /* Global Network Section */
+        .global-network {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 7%;
+            text-align: center;
+        }
+
+        .network-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .network-stat {
+            text-align: center;
+        }
+
+        .network-stat h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-bg);
+            padding: 100px 7%;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--accent-color);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-right: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 7%;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Adjustments for New Sections */
+        @media screen and (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .network-stats {
+                flex-direction: column;
+            }
+
+            .network-stat {
+                margin-bottom: 30px;
+            }
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --text-color: #333;
+            --light-bg: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(44, 62, 80, 0.95);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 7%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar-menu li {
+            margin-left: 30px;
+        }
+
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(44, 62, 80, 0.9)),
+                url('/api/placeholder/1600/900');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 200px 5% 150px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background-color: var(--accent-color);
+            box-shadow: 0 15px 25px rgba(46, 204, 113, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 7%;
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Tracking Section */
+        .tracking {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 7%;
+            text-align: center;
+        }
+
+        #trackingForm {
+            max-width: 600px;
+            margin: 40px auto;
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        #trackingInput {
+            flex-grow: 1;
+            padding: 15px 25px;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        #trackButton {
+            padding: 15px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #trackButton:hover {
+            background-color: var(--secondary-color);
+        }
+
+        #trackingResult {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 992px) {
+            .hero {
+                padding: 150px 5% 100px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .navbar-menu {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar-menu li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">
+            GlobalRoute Logistics
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#tracking">Track Shipment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Global Logistics Excellence</h1>
+            <p>Delivering precision, reliability, and innovation in logistics solutions that transform your supply chain
+                and drive business growth.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary-color);">Our Comprehensive Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-globe"></i>
+                <h3>Global Shipping</h3>
+                <p>Seamless international logistics with end-to-end tracking and support.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-warehouse"></i>
+                <h3>Advanced Warehousing</h3>
+                <p>Secure, intelligent storage solutions with real-time inventory management.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-truck-moving"></i>
+                <h3>Supply Chain Optimization</h3>
+                <p>Strategic logistics planning to enhance efficiency and reduce operational costs.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Custom Clearance</h3>
+                <p>Expedited customs processing for smooth international trade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <section id="tracking" class="tracking">
+        <h2>Track Your Shipment</h2>
+        <p>Get real-time updates on your logistics journey</p>
+        <form id="trackingForm">
+            <input type="text" id="trackingInput" placeholder="Enter Tracking Number" required>
+            <button type="submit" id="trackButton">Track</button>
+        </form>
+        <div id="trackingResult"></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <blockquote>"GlobalRoute has transformed our supply chain with their incredible logistics solutions.
+                    Highly recommended!"</blockquote>
+                <div class="client-info">
+                    <img src="New folder/1596572795232.jpeg" alt="Client">
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <p>CEO, TechGlobal Inc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>"Exceptional service and reliability. Our international shipping has never been smoother."
+                </blockquote>
+                <div class="client-info">
+                    <img src="New folder/1596572795232.jpeg" alt="Client">
+                    <div>
+                        <h4>Michael Chen</h4>
+                        <p>Logistics Director, Global Traders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>"Their custom clearance service is unmatched. We've cut our processing times by half!"
+                </blockquote>
+                <div class="client-info">
+                    <img src="New folder/1596572795232.jpeg" alt="Client">
+                    <div>
+                        <h4>Emma Rodriguez</h4>
+                        <p>Operations Manager, EuroTrade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Network Section -->
+    <section class="global-network">
+        <h2>Our Global Reach</h2>
+        <p>Connecting businesses across continents with our extensive logistics network</p>
+        <div class="network-stats">
+            <div class="network-stat">
+                <h3>150+</h3>
+                <p>Countries Served</p>
+            </div>
+            <div class="network-stat">
+                <h3>500K+</h3>
+                <p>Shipments Monthly</p>
+            </div>
+            <div class="network-stat">
+                <h3>25+</h3>
+                <p>Years of Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Our Headquarters</h3>
+                        <p>123 Logistics Street, Global City, World</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Customer Support</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>support@globalroute.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#tracking">Track Shipment</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 GlobalRoute Logistics. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('trackingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const trackingNumber = document.getElementById('trackingInput').value;
+            const resultDiv = document.getElementById('trackingResult');
+
+            const mockTrackingData = {
+                'GR12345': {
+                    status: 'In Transit',
+                    location: 'New York Distribution Center',
+                    estimatedDelivery: '2024-06-15',
+                    details: 'Package processed and en route to destination'
+                },
+                'GR67890': {
+                    status: 'Delivered',
+                    location: 'Los Angeles Hub',
+                    estimatedDelivery: '2024-05-20',
+                    details: 'Successfully delivered to recipient'
+                }
+            };
+
+            if (mockTrackingData[trackingNumber]) {
+                const data = mockTrackingData[trackingNumber];
+                resultDiv.innerHTML = `
+                    <h3>Tracking Details for ${trackingNumber}</h3>
+                    <p><strong>Status:</strong> ${data.status}</p>
+                    <p><strong>Current Location:</strong> ${data.location}</p>
+                    <p><strong>Estimated Delivery:</strong> ${data.estimatedDelivery}</p>
+                    <p><strong>Additional Info:</strong> ${data.details}</p>
+                `;
+            } else {
+                resultDiv.innerHTML = '<p>Invalid tracking number. Please verify and try again.</p>';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // Contact Form Submission Handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
